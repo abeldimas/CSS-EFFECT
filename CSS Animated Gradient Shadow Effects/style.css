@@ -1,0 +1,50 @@
+html, body {
+  height: 100%;
+}
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: #000;
+}
+.box {
+  position: relative;
+  width: 400px;
+  height: 250px;
+  background: linear-gradient(0deg, #101010, #292929);
+  display: table;
+  margin: 50px auto;
+}
+.box::before,
+.box::after
+{
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
+  background: linear-gradient(45deg, #9400D3, #4B0082, #0000FF, #00FF00, #FFFF00, #FF7F00, #FF0000);
+  z-index: -1;
+  animation: animation 25s linear infinite;
+  background-size: 300%;
+}
+.box::after {
+  filter: blur(10px);
+}
+.box .text {
+  padding: 20px;
+  text-align: justify;
+  color: #eee;
+  display: table-cell;
+  vertical-align: middle;
+}
+@keyframes animation {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400%;
+  }
+  100%{
+    background-position: 0 0;
+  }
+}﻿
